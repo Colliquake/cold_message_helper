@@ -26,7 +26,7 @@ async def generate_message(payload: GenerateRequest):
     all_experiences = []
     for ocr_text in payload.ocr_texts:
         experiences = utils.extract_profile_fields(ocr_text)
-        print(f"Extracted from one image: {experiences!r} (type: {type(experiences)})")
+        # print(f"Extracted from one image: {experiences!r} (type: {type(experiences)})")
         all_experiences.extend(experiences)
 
     # print(all_experiences)
