@@ -1,0 +1,2 @@
+- clicking generate message on site automatically closes "window"
+- what to do if user's input text is blank?

@@ -19,7 +19,8 @@ def extract_profile_fields(ocr_text: str):
                     Extract the following fields from this OCR text of a LinkedIn profile screenshot. Note that the person may have worked at multiple companies, and that they may have had multiple roles at their companies.
                     
                     Rules:
-                    - Return ONLY valid JSON, no other text, in this exact shape, with EXACTLY these keys: {{"title": "", "company": "", "dates": "", "location": "", "description": ""}}
+                    - Return ONLY a JSON array, even if there is only one experience entry -- always wrap it in [ ]
+                    - Return ONLY a JSON array, where each element is an object with EXACTLY these keys: {{"title": "", "company": "", "dates": "", "location": "", "description": ""}}
                     - Do not add any other keys
                     - Do not wrap the JSON in markdown code fences or any other text
                     - If a field isn't found, use an empty string ""
@@ -61,7 +62,7 @@ def generate_cold_message(experiences: list[dict], user_message: str) -> str:
     Here is what the sender wants to communicate or ask for:
     "{user_message}"
     
-    Write a short, natural-sounding cold outreach message (3-5 sentences max, 200 characters max) that:
+    Write a short, natural-sounding cold outreach message (3-5 sentences max, 150 characters max) that:
     - References something specific and relevant from their experience (most recent role is usually most relevant, but use judgment)
     - Clearly conveys the sender's intent from their input above
     - Sounds like a real person wrote it, not a template
