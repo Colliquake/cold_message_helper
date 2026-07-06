@@ -1,0 +1,3 @@
+NEED TO TEST:
+- what to do if user's input text is blank
+- what if user uploaded screenshot is partially cut off
