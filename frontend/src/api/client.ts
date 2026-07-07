@@ -1,11 +1,12 @@
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
 interface SubmitPayload {
   ocrTexts: string[];
   userMessage: string;
 }
 
 export async function submitMessage({ ocrTexts, userMessage }: SubmitPayload) {
-    console.log('submitmessage called with:', { ocrTexts, userMessage });
-  const res = await fetch('http://localhost:8000/generate', {
+  const res = await fetch(`${API_BASE_URL}/generate`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
