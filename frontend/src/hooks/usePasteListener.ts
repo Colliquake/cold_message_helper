@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 
 export function usePasteListener(onImagePasted: (file: File) => void) {
     useEffect(() => {
